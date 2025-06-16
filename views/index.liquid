@@ -1,0 +1,90 @@
+{% render 'partials/head.liquid' %}
+{% render 'partials/sidebar.liquid' %}
+
+{% comment %} Voor de google library chart {% endcomment %}
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<header class="intro">
+    <a href="/views/index.liquid" class="back-link">
+    <img src="/assets/images/arrow-right.svg" alt="terug naar het dashboard">
+    terug naar dashboard
+    </a>
+
+    <h1>Gebruikers statistieken</h1>
+</header>
+
+<section class="section-one">
+    <ul>
+        <li><button class="active">User data</button></li>
+        <li><button>Course data</button></li>
+    </ul>
+</section>
+<main>
+<section class="section-three">
+    <ul>
+        <li>
+            <h3>Totale gebruikers</h3>
+            <p>963</p>
+            <p>licenties</p>
+        </li>
+        {% comment %} probeer hier een live button te zetten en niet de 
+        groene stip{% endcomment %}
+        <li>
+            <h3>Nu online</h3> 
+            <p>23</p>
+        </li>
+        <li>
+            <h3>Gemiddelde sessie</h3>
+            <p>24</p>
+            <p>minuten</p>
+        </li>
+    </ul>
+</section>
+
+<section class="section-four">
+    <label for="leerjaar">leerjaar</label>
+    <select id="leerjaar" name="leerjaar">
+        <option value="">Schooljaar</option>
+        <option value="1">Schooljaar 1</option>
+    </select>
+
+    <label for="zoek-klas">Zoek klassen</label>
+<input
+  type="search"
+  id="zoek-klas"
+  placeholder="Zoek Klassen"
+  aria-label="Zoek klassen"
+/>
+
+<ul role="tablist">
+    <li>
+        <button type="button" role="tab">Klassen</button>
+    </li>
+    <li>
+        <button type="button" role="tab">Studenten</button>
+    </li>
+</ul>
+
+{% comment %} data tonen op de pagina leerlingen {% endcomment %}
+{% if klassen %}
+    <ul>
+      {% for klas in klassen %}
+        <li>
+          <h2>{{ klas.naam }}</h2>
+          <p>{{ klas.begeleider }}</p>
+          <p>Voortgang: {{ klas.voortgang }}%</p>
+          <a href="/klas/{{ klas.id }}">Klas bekijken →</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Er zijn geen klassen gevonden.</p>
+  {% endif %}
+  
+
+
+</section>
+</main>
+
+
+{% render 'partials/foot.liquid' %}
