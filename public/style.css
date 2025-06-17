@@ -1,0 +1,333 @@
+:root {
+    --color-primary: #483AE6;
+    --color-success: #059669;
+    --color-danger: #DC2626;
+    --color-bg: #FFFFFF;
+    --color-surface: #FCFBFE;
+    --color-text-primary: #10014E;
+    --color-text-secondary: #7C7C8A;
+    --radius: 0.75rem;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Algemene body */
+  body {
+    margin: 0;
+    background-color: var(--color-bg);
+    font-family: 'Figtree', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Intro / Header bovenaan */
+  .intro {
+    margin-left: 21em;
+    padding: 2rem 2rem 0 2rem;
+    display: grid;
+    grid-template-rows: min-content auto;
+    row-gap: 0.75rem;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  
+  .intro .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  /* pixel converter */
+  .back-link img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+  
+  .intro h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+  }
+
+
+/* 1 */
+  .section-one {
+    margin-left: 21em;
+    padding: 1.5rem 2rem 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .section-one ul {
+    list-style: none;
+    padding: 0.25rem;
+    margin: 0;
+    display: flex;
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    width: fit-content;
+    gap: 0.5rem;
+  }
+  
+  /* Tabknoppen */
+  .section-one button {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 2.5rem;
+    font-size: 0.9rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--color-text-secondary);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Actieve tabknop */
+  .section-one button.active {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-soft);
+  }
+
+  
+
+
+
+/* 2  */
+/* grafiek */
+  .section-two {
+    margin-left: 21em; 
+    padding: 2rem;
+    border-radius: 0.75rem;
+    max-width: 960px;
+    width: calc(100% - 21em - 4rem); /* viewport - sidebar - padding */
+    box-sizing: border-box;
+  }
+  
+  .section-two h2 {
+    font-size: 1rem;
+    margin: 0;
+    color: #10014E;
+    font-weight: 600;
+  }
+  
+  .section-two p {
+    font-size: 0.875rem;
+    color: #999;
+    margin-bottom: 1.5rem;
+  }
+
+  #grafiek {
+    width: 125%;
+    height: 350px;
+  }
+  
+  /* 3 */
+  .section-three {
+    margin-left: 21em;
+    padding: 2rem 2rem 0 2rem;
+  }
+  
+  .section-three ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem; 
+    padding: 0;
+    margin: 0;
+  }
+
+.section-three li {
+  background-color: var(--color-surface);
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem; 
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  align-items: center;
+  min-height: 100px; 
+}
+
+  .section-three h3 {
+    margin: 0;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .section-three p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .section-three p:first-of-type {
+    font-size: 1.6rem; 
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  /* live indicator maar dit is tijdelijk veranderen naar een animatie 
+  die knippert */
+  .live-indicator {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #00c853; 
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    box-shadow: 0 0 0 2px white;
+    vertical-align: middle;
+  }
+  
+
+
+/* 4 */
+  .section-four {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem 2rem;
+    margin-left: 21em;
+    padding: 2rem 2rem 0 2rem;
+    font-family: 'Figtree', sans-serif;
+  }
+  
+  
+  .section-four label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-text-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Velden */
+  .section-four select,
+  .section-four input[type="search"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid #E0E0E0;
+    border-radius: 0.75rem;
+    background-color: white;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+  
+  .section-four select:focus,
+  .section-four input[type="search"]:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 58, 230, 0.15);
+  }
+  
+  .section-four input::placeholder {
+    color: var(--color-text-secondary);
+  }
+  
+
+  .tab-buttons {
+    list-style: none;
+    padding: 0.25rem;
+    margin: 0;
+    display: flex;
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    width: fit-content;
+    gap: 0.5rem;
+  }
+  
+  .tab-buttons button {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 2.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Figtree', sans-serif;
+    color: var(--color-text-secondary);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .tab-buttons button.active {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-soft);
+  }
+  
+
+
+/* 5 */
+  .section-five {
+    margin-left: 21em;
+    padding: 2rem 2rem 4rem 2rem;
+    font-family: 'Figtree', sans-serif;
+  }
+  
+  /* Lijststructuur */
+  .section-five ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  /* Kaart per klas */
+  .section-five li {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 1rem; 
+    padding: 1.75rem;
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+  }
+    
+  /* Link "Klas bekijken" */
+  .section-five a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    transition: background 0.2s ease;
+    margin: auto;
+  }
+  
+  .section-five a:hover {
+    background-color: #f3f3f3;
+  }
+  
+  
+  .section-five h2 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+  }
+  
+  /* Begeleider + voortgang */
+  .section-five p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+  
+  .section-five p:last-of-type {
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+  

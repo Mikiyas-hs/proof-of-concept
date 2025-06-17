@@ -1,0 +1,115 @@
+/* Fonts inladen */
+@font-face {
+    font-family: 'Rubik';
+    src: url('/assets/fonts/Rubik-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Figtree';
+    src: url('/assets/fonts/Figtree-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  body {
+    margin: 0;
+  }
+  /* Sidebar algemeen */
+  aside {
+    background-color: #fcfbfe; 
+    width: 21em;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    font-family: 'Figtree', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 500;
+    bottom: 0;
+  }
+  
+  /* Gebruiker info */
+  aside section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  aside section p {
+    margin: 0;
+    line-height: 0.7em;
+    font-size: 0.9rem;
+  }
+  
+  aside section p strong {
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  /* Container styling voor nav */
+aside nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Hoofdonderdelen (Dashboard, Opleidingen) */
+  aside nav > ul > li > p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2d2d2d;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+  }
+  
+  /* Subitems (zoals Gebruikers beheren) */
+  aside nav ul ul {
+    border-left: 2px solid #e2dcdc;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  aside nav ul ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #2d2d2d;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.95rem;
+  }
+  
+aside nav .ipse {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+  font-family: 'Figtree', sans-serif;
+}
+
+aside nav .opleidingen {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 1.5rem 0 0.75rem 0;
+  font-family: 'Figtree', sans-serif;
+}
