@@ -24,24 +24,25 @@
 <section class="section-two">
 <h2>Actieve gebruikers</h2>
 <p>Totale aantal actieve gebruikers van afgelopen 3 maanden</p>
-<section id="grafiek" style="width: 100%; height: 400px;"></section>
+<section id="grafiek" ></section>
 </section>
 
 <main>
 <section class="section-three">
     <ul>
-        <li>
+        <li class="stat-card gebruikers">
             <h3>Totale gebruikers</h3>
             <p>963</p>
             <p>licenties</p>
         </li>
         {% comment %} probeer hier een live button te zetten en niet de 
         groene stip{% endcomment %}
-        <li>
+        <li class="stat-card online-gebruikers">
             <h3>Nu online</h3> 
-            <p>23</p>
+            <p><span class="live-indicator"></span> 23</p>
+            <p>Gebruikers online op dit moment</p>
         </li>
-        <li>
+        <li class="stat-card sessies">
             <h3>Gemiddelde sessie</h3>
             <p>24</p>
             <p>minuten</p>
@@ -50,30 +51,34 @@
 </section>
 
 <section class="section-four">
-    <label for="leerjaar">leerjaar</label>
+
+<div class="veld-groep">
+    <label for="leerjaar">Leerjaar</label>
     <select id="leerjaar" name="leerjaar">
-        <option value="">Schooljaar</option>
-        <option value="1">Schooljaar 1</option>
+<option value="">Schooljaar</option>
+<option value="1">Schooljaar 1</option>
     </select>
+</div>
 
-    <label for="zoek-klas">Zoek klassen</label>
-<input
-  type="search"
-  id="zoek-klas"
-  placeholder="Zoek Klassen"
-  aria-label="Zoek klassen"
-/>
+<div class="veld-groep">
+  <label for="zoek-klas">Zoek klassen</label>
+  <input
+    type="search"
+    id="zoek-klas"
+    name="zoek-klas"
+    placeholder="Zoek Klassen"
+  />
+</div>
 
-<ul role="tablist">
-    <li>
-        <button type="button" role="tab">Klassen</button>
-    </li>
-    <li>
-        <button type="button" role="tab">Studenten</button>
+
+<ul class="tab-buttons">
+    <li><button class="active">Klassen</button></li>
+    <li><button>Studenten</button>
     </li>
 </ul>
-
+</section>
 {% comment %} data tonen op de pagina leerlingen {% endcomment %}
+<section class="section-five">
 {% if klassen %}
     <ul>
       {% for klas in klassen %}
@@ -93,7 +98,6 @@
 
 </section>
 </main>
-
 
 {% comment %} google chart JS met behulp van chat {% endcomment %}
 <script>
