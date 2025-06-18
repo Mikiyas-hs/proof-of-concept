@@ -10,6 +10,16 @@
     --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
   
+
+  .layout-wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    box-sizing: border-box;
+  }
+  
+
   /* Algemene body */
   body {
     margin: 0;
@@ -115,6 +125,8 @@
     padding-right: 9rem;
   }
 }
+
+
   
   .section-two h2 {
     font-size: 1rem;
@@ -200,6 +212,9 @@
     margin-right: 0.5rem;
     box-shadow: 0 0 0 2px white;
     vertical-align: middle;
+    position: relative;
+  }
+
   .live-indicator::before {
     content: '';
     position: absolute;

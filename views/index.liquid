@@ -1,6 +1,7 @@
 {% render 'partials/head.liquid' %}
+<div class="layout-wrapper">
 {% render 'partials/sidebar.liquid' %}
-
+<main>
 {% comment %} Voor de google library chart {% endcomment %}
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -27,7 +28,7 @@
 <section id="grafiek" ></section>
 </section>
 
-<main>
+
 <section class="section-three">
     <ul>
         <li class="stat-card gebruikers">
@@ -39,7 +40,7 @@
         groene stip{% endcomment %}
         <li class="stat-card online-gebruikers">
             <h3>Nu online</h3> 
-            <p><span class="live-indicator"></span> 23</p>
+            <p><span class="live-indicator"></span>23</p>
             <p>Gebruikers online op dit moment</p>
         </li>
         <li class="stat-card sessies">
@@ -98,7 +99,7 @@
 
 </section>
 </main>
-
+</div>
 {% comment %} google chart JS met behulp van chat {% endcomment %}
 <script>
   google.charts.load('current', { packages: ['corechart'] });
@@ -143,6 +144,4 @@
     chart.draw(data, options);
   }
 </script>
-
-
 {% render 'partials/foot.liquid' %}

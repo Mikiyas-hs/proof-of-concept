@@ -16,11 +16,23 @@
   }
   body {
     margin: 0;
+    display: flex;
   }
+
+  .main-container {
+    margin-left: 21em;
+    padding: 2rem;
+    max-width: 1300px;
+    width: 100%;
+    box-sizing: border-box;
+    
+  }
+  
+  
   /* Sidebar algemeen */
   aside {
     background-color: #fcfbfe; 
-    width: 21em;
+    /* width: 21em; */
     min-height: 100vh;
     padding: 2rem 1.5rem;
     box-sizing: border-box;
@@ -31,7 +43,9 @@
     margin: 0;
     z-index: 500;
     bottom: 0;
+    max-width: 21em;
   }
+  
   
   /* Gebruiker info */
   aside section {
@@ -83,7 +97,7 @@ aside nav ul {
   /* Subitems (zoals Gebruikers beheren) */
   aside nav ul ul {
     border-left: 2px solid #e2dcdc;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
