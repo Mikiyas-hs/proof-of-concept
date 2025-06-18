@@ -97,14 +97,24 @@
 
 /* 2  */
 /* grafiek */
-  .section-two {
-    margin-left: 21em; 
-    padding: 2rem;
-    border-radius: 0.75rem;
-    max-width: 960px;
-    width: calc(100% - 21em - 4rem); /* viewport - sidebar - padding */
-    box-sizing: border-box;
+.section-two {
+  margin-left: 21em;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  max-width: 960px;
+  width: calc(100% - 21em - 4rem);  /*viewport - sidebar - padding*/ 
+  box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    padding-left: 3rem;
+    padding-right: 6rem;
   }
+
+  @media (min-width: 1200px) {
+    padding-left: 3rem;
+    padding-right: 9rem;
+  }
+}
   
   .section-two h2 {
     font-size: 1rem;
@@ -124,6 +134,7 @@
     height: 350px;
   }
   
+  
   /* 3 */
   .section-three {
     margin-left: 21em;
@@ -131,13 +142,20 @@
   }
   
   .section-three ul {
-    list-style: none;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.8rem; 
+    gap: 1.5rem;
     padding: 0;
     margin: 0;
+    list-style: none;
   }
+  
+  @media (min-width: 1200px) {
+    .section-three ul {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+  
 
 .section-three li {
   background-color: var(--color-surface);
@@ -172,19 +190,25 @@
     color: var(--color-text-primary);
   }
 
-  /* live indicator maar dit is tijdelijk veranderen naar een animatie 
-  die knippert */
+/* Live indicator laten animeren dmv keyframes: pulse */
   .live-indicator {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background-color: #00c853; 
     border-radius: 50%;
     margin-right: 0.5rem;
     box-shadow: 0 0 0 2px white;
     vertical-align: middle;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s infinite;
   }
   
+
+      opacity: 0;
+    }
+  }
 
 
 /* 4 */
@@ -195,7 +219,15 @@
     margin-left: 21em;
     padding: 2rem 2rem 0 2rem;
     font-family: 'Figtree', sans-serif;
-  }
+  
+    @media (min-width: 1200px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 2rem;
+        align-items: end;
+      }
+    }
+  
   
   
   .section-four label {
@@ -329,5 +361,17 @@
   .section-five p:last-of-type {
     font-weight: 500;
     color: var(--color-primary);
+  }
+  
+  @media (min-width: 1024px) {
+    .section-five li {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .section-five a {
+      margin: 0; 
+    }
   }
   
