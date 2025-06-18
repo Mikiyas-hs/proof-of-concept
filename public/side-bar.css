@@ -113,3 +113,10 @@ aside nav .opleidingen {
   margin: 1.5rem 0 0.75rem 0;
   font-family: 'Figtree', sans-serif;
 }
+
+
+@media (min-width: 1800px) {
+  aside {
+    left: calc((100vw - 1300px) / 2);
+  }
+}
