@@ -68,3 +68,26 @@ document.querySelectorAll('.aantekening-form').forEach(form => {
     });
   });
   
+  
+// user data button
+const tabButtons = document.querySelectorAll('.section-one button');
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+
+
+
+// klassen button
+document.querySelectorAll('.tab-buttons button').forEach(btn => {
+    
+    btn.addEventListener('click', () => {
+      
+      document.querySelectorAll('.tab-buttons button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+  
