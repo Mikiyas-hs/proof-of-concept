@@ -40,4 +40,31 @@ voortgangsregels.forEach(p => {
   `;
 });
 
+
+// loading state
+document.querySelectorAll('.aantekening-form').forEach(form => {
+    form.addEventListener('submit', e => {
+      const btn = form.querySelector('button');
+      btn.classList.add('loading');
+    });
+  });
+
+// succes state
+document.querySelectorAll('.aantekening-form').forEach(form => {
+
+    form.addEventListener('submit', e => {
+      const button = form.querySelector('button');
+      button.disabled = true;
+      button.textContent = 'Opslaan...';
+  
+      const popup = document.querySelector('.popup');
+      popup.classList.add('show');
+  
+      setTimeout(() => {
+        popup.classList.remove('show');
+        button.disabled = false;
+        button.textContent = 'Opslaan';
+      }, 2000);
+    });
+  });
   
