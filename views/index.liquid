@@ -88,6 +88,24 @@
           <p>{{ klas.begeleider }}</p>
           <p>Voortgang: {{ klas.voortgang }}%</p>
           <a href="/klas/{{ klas.id }}">Klas bekijken →</a>
+        <div class="aantekening-dropdown hidden">
+            <form method="POST" action="/{{ klas.id }}" class="aantekening-form">
+              <input type="text" name="from" placeholder="Docentnaam" required>
+              <textarea name="content" placeholder="Voeg een aantekening toe..." required></textarea>
+              <button type="submit">Opslaan</button>
+            </form>
+
+        <ul class="aantekeningen-lijst">
+          {% for message in messages %}
+            {% if message.klas == klas.id %}
+              <li class="aantekeningen-item">
+                <strong>{{ message.from }}</strong>: {{ message.content }}
+                <br><small>{{ message.timestamp }}</small>
+                </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+</div>
         </li>
       {% endfor %}
     </ul>
@@ -144,4 +162,6 @@
     chart.draw(data, options);
   }
 </script>
+
+<script src="/client-side.js"></script>
 {% render 'partials/foot.liquid' %}

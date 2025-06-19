@@ -29,15 +29,31 @@ app.set('view engine', 'liquid')
 app.get('/', async function (req, res) {
     const klassenRes = await fetch(apiKlassen);
     const statistiekenRes = await fetch(apiStatistieken);
+  app.post('/:klasId', async function (req, res) {
+    const klasId = req.params.klasId
+    const { from, content } = req.body
   
-    const klassenJson = await klassenRes.json();
-    const statistiekenJSON = await statistiekenRes.json();
+    const newMessage = {
+      klas: klasId,
+      from,
+      content,
+      timestamp: new Date().toISOString()
+    }
   
-    res.render('index.liquid', {
-      klassen: klassenJson,
-      statistieken: statistiekenJSON
-    });
-  });
+    let existingMessages = []
+    try {
+      const file = await fs.readFile(dataPath, 'utf8')
+      existingMessages = JSON.parse(file)
+    } catch {
+      existingMessages = []
+    }
+  
+    existingMessages.push(newMessage)
+    await fs.writeFile(dataPath, JSON.stringify(existingMessages, null, 2))
+  
+    res.redirect(303, '/')
+  })
+    
   
 
 
