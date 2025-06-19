@@ -499,3 +499,31 @@
     margin: 0; 
   }
 }
+
+
+/* progressie indicator */
+.progress-container {
+  width: 120px;
+  height: 16px;
+  background: #E5E4F9; 
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  line-height: 16px;
+}
+
+.progress-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+}
+
