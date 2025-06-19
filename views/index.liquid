@@ -83,11 +83,21 @@
 {% if klassen %}
     <ul>
       {% for klas in klassen %}
-        <li>
+        <li class="klas-blok">
+          <div class="klas-header">
           <h2>{{ klas.naam }}</h2>
           <p>{{ klas.begeleider }}</p>
           <p>Voortgang: {{ klas.voortgang }}%</p>
           <a href="/klas/{{ klas.id }}">Klas bekijken →</a>
+        </div>
+
+          <!-- Toggle knop  -->
+        <div class="aantekening-toggle">
+            <h4>Aantekeningen & toevoegen</h4>
+            <span class="chevron">▼</span>
+        </div>
+
+              <!-- Verborgen formulier -->
         <div class="aantekening-dropdown hidden">
             <form method="POST" action="/{{ klas.id }}" class="aantekening-form">
               <input type="text" name="from" placeholder="Docentnaam" required>
