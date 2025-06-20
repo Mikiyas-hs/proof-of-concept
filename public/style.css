@@ -460,7 +460,7 @@
   }
   
 .aantekening-dropdown {
-  display: none;
+  /* display: none; */
   padding-top: 1rem;
 }
 
@@ -578,4 +578,43 @@
 
 .popup.show {
   opacity: 1;
+}
+
+
+/* pleasurable ui voor opslaan button */
+button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.25); 
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 0;
+}
+
+button[type="submit"]:hover::before {
+  width: 250%;
+  height: 250%;
+}
+
+button[type="submit"] > * {
+  position: relative;
+  z-index: 1;
 }
